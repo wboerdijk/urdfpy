@@ -2190,8 +2190,7 @@ class Joint(URDFType):
     def limit(self, value):
         if value is None:
             if self.joint_type in ['prismatic', 'revolute']:
-                raise ValueError('Require joint limit for prismatic and '
-                                 'revolute joints')
+                print(f"WARNING: No joint limit set for {self.name}!")
         elif not isinstance(value, JointLimit):
             raise TypeError('Expected JointLimit type')
         self._limit = value
